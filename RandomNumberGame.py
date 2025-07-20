@@ -1,7 +1,7 @@
 import random
 def welcome_message():
     print("Welcome to the Random Number Game!")
-    print("Try to guess the number between 1 and 100.")
+    print("Try to guess the number between 1 and 100.\n")
 
 
 def game_rules():
@@ -9,7 +9,7 @@ def game_rules():
     print("1. The computer will randomly select a number between 1 and 100.")
     print("2. You will try to guess the number.")
     print("3. After each guess, you will be informed if your guess is too high, too low, or correct.")
-    print("4. The game continues until you guess the correct number.")
+    print("4. The game continues until you guess the correct number.\n")
 
 
 def user_choice():
