@@ -111,10 +111,11 @@ def play_game():
     game_rules()
 
     choosenWord = randomWord()
+    print("\nSo Lets Start the game!\n")
     print(f"The word has {len(choosenWord)} letters.")
     
     placeholder = "_ "
-    print(f"Word : {placeholder * 6}")
+    print(f"Word : {placeholder * len(choosenWord)}")
     print()
 
     guessed_word = ["_"] * len(choosenWord)
