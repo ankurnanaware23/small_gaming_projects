@@ -1,24 +1,36 @@
+def game_hub():
+    print("🎮 Welcome to the Game Hub!")
 
-print("🎮 Welcome to the Game Hub!")
-print("You can choose between two games:")
-print("1. Random Number Game")
-print("2. Snake Water Gun Game")
-print("3. HangMan Game")
+    while True:
+        print("\nYou can choose between the following games:")
+        print("1. Random Number Game")
+        print("2. Snake Water Gun Game")
+        print("3. Hangman Game")
 
-choice = input("Which game do you want to play? ").strip().lower()
+        choice = input("Which game do you want to play? (Enter 1, 2, or 3): ").strip()
 
-if choice == "random number game":
-    import RandomNumberGame as rng
-    rng.play_game()
+        match choice:
+            case "1":
+                import RandomNumberGame as rng
+                rng.play_game()
 
-elif choice == "snake water gun game":
-    import SnakeWaterGunGame as swg
-    swg.play_game()
+            case "2":
+                import SnakeWaterGunGame as swg
+                swg.play_game()
 
-elif choice == "snake water gun game":
-    import HangmanGame as hg
-    hg.play_game
+            case "3":
+                import HangmanGame as hg
+                hg.play_game()
 
-else:
-    print("❌ Invalid choice! Please choose either 'Random Number Game' or 'Snake Water Gun Game'.")
-    print("Exiting the Game Hub.")
+            case _:
+                print("❌ Invalid choice! Please choose 1, 2, or 3.")
+                continue
+        
+        print()
+        again = input("Do you want to return to the Game Hub and play another game? (yes/no): ").strip().lower()
+        if again != "yes":
+            print("👋 Thank you for playing! Goodbye.")
+            break
+
+if __name__ == "__main__":
+    game_hub()

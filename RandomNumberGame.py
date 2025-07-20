@@ -43,14 +43,17 @@ def play_round(uc, cp, attempts):
         play_round(user_choice(), cp, attempts)
 
 def play_again():
-    choice = input("Do you want to play again? (yes/no): ").lower()
-    if choice == "yes":
-        play_game()
-    elif choice == "no":
-        print("Thank you for playing the Random Number Game!")
-    else:
-        print("Please enter 'yes' or 'no'.")
-        play_again()
+    while True:
+        choice = input("Do you want to replay the game? (yes/no): ").lower().strip()
+        if choice == "yes":
+            play_game()
+            break
+        elif choice == "no":
+            print("👋 Thank you for playing the Random Number Game!")
+            print("Returning to Game Hub...")
+            return 
+        else:
+            print("❌ Invalid input, please enter 'yes' or 'no'.")
 
 
 def play_game():

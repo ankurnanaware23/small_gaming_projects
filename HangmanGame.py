@@ -9,7 +9,17 @@ def gameName():
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/""")
-    
+
+def game_rules():
+    print("📜 Hangman Game Rules:")
+    print("1. The computer will choose a random word.")
+    print("2. You have to guess the word one letter at a time.")
+    print("3. If the guessed letter is in the word, it will be revealed in its correct position(s).")
+    print("4. If the guessed letter is not in the word, you lose a life.")
+    print("5. You have a total of 6 lives.")
+    print("6. The game ends when you either guess the word or run out of lives.")
+    print("7. Repeated or invalid guesses don't cost a life, but you’ll be warned.")
+
 hangman_stages = [
     '''
      -----
@@ -85,7 +95,8 @@ def replay():
             break
         elif choice == "no":
             print("👋 Thank you for playing the Hangman Game!")
-            break
+            print("Returning to Game Hub...")
+            return 
         else:
             print("❌ Invalid input, please enter 'yes' or 'no'.")
 
@@ -96,6 +107,8 @@ def randomWord():
 
 def play_game():
     gameName()
+    print()
+    game_rules()
 
     choosenWord = randomWord()
     print(f"The word has {len(choosenWord)} letters.")
